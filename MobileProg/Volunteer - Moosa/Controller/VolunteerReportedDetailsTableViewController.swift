@@ -30,22 +30,7 @@ class VolunteerReportedDetailsTableViewController: UITableViewController {
     
     @IBAction func unreportClicked(_ sender: Any) {
         let ref = Database.database().reference()
-        ref.child("User").observe(.value, with: {(snapshot) in
-            if let result = snapshot.children.allObjects as? [DataSnapshot] {
-                for child in result {
-                    let userID = child.key as String //get autoID
-                    ref.child("User/\(userID)/Username").observe(.value, with: { (snapshot) in
-                        if let id = snapshot.value as? String {
-                            //change this ID and put current uid
-                            if id == self.reportedSeeker?.username {
-                                ref.child("User/\(userID)").child("IsReported").setValue("false")
-                            }
-                        }
-                    })
-                }
-            }
-        })
-        
+        ref.child("User").child(self.reportedSeeker!.seekerId).child("IsReported").setValue(false)
         let alert = UIAlertController(title: "Notice", message: "Seeker has been unreported", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Understood", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

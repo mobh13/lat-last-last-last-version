@@ -169,25 +169,25 @@ class VolunteerSeekerDetailsTableViewController: UITableViewController {
         alert.addTextField { (textField) in
             textField.placeholder = "Reason for reportation here..."
         }
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
-            print("Text field: \(textField?.text ?? "-")")
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            let textField = alert.textFields![0]
+            print("Text field: \(textField.text ?? "-")")
             
             let ref = Database.database().reference()
-            ref.child("User").observe(.value, with: {(snapshot) in
-                                    ref.child("User/\(self.selectedSeeker!.seekerId)").child("IsReported").setValue("true")
-                                    
-                                    self.reportUser(reasonForReport: textField?.text ?? "-", user: self.selectedSeeker!.seekerId)
-                                }
-                            )}
-                        ))
+        
+            ref.child("User").child(self.selectedSeeker!.seekerId).child("IsReported").setValue(true)
+               self.reportUser(reasonForReport: textField.text ?? "-", user: self.selectedSeeker!.seekerId)
+
+            
+        }
+        ))
         self.present(alert, animated: true, completion: nil)
     }
     
     func reportUser(reasonForReport: String, user: String) {
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let formattedDate = dateFormatter.string(from: date)
         let db = Database.database().reference().child("Report");
         let key = db.childByAutoId().key

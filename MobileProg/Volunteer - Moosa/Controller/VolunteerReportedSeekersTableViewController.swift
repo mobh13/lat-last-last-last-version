@@ -16,13 +16,16 @@ class VolunteerReportedSeekersTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadReportedSeekers()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        loadReportedSeekers()
+
     }
     
     private func loadReportedSeekers() {
@@ -35,7 +38,7 @@ class VolunteerReportedSeekersTableViewController: UITableViewController {
             let dict = childSnap.value as! [String: Any]
             let role = dict["Role"] as? String ?? "-"
             let isReported = dict["IsReported"] as? Bool ?? false
-
+            
             print(isReported)
             
             
@@ -47,8 +50,8 @@ class VolunteerReportedSeekersTableViewController: UITableViewController {
                 let username = dict["Username"] as? String ?? "-"
                 let phoneNumber = dict["PhoneNumber"] as? String ?? "-"
                 let requestedVolunteer = dict["RequestedVolunteer"] as? String ?? "-"
-                let id = snapshot.key
-
+                let id = dict["seekerID"] as? String ?? "-"
+                
                 
                 
                 

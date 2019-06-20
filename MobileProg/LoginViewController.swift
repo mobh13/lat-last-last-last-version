@@ -53,43 +53,72 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                             format.dateFormat = "yyyy-MM-dd HH:mm:ss"
                             let formattedDate = format.string(from: date)
                           
-                          let dbOb = ["Date": formattedDate ,
-                                                         "Status": "Success",
-                                                         "Platform" :  "Ios" ,
-                                                         "UserId": uid
-                                                      
-                                ] as [String : Any]
-                              Database.database().reference().child("LoginLog").childByAutoId().setValue(dbOb)
-                            
-                            if let  type = value?.value(forKey: "Role") as? String{
-                                if type == "Admin"{
-                                    let s = UIStoryboard(name: "Admin", bundle: nil)
-                                    let vc = s.instantiateViewController(withIdentifier: "adminDashboard")
-                                    self!.navigationController?.pushViewController(vc, animated: true)
-                                  
-                            
-
-                                }else if type == "Doctor"{
+                            if let isBlocked = value?.value(forKey: "IsBlocked") as? Bool{
+                                
+                                if isBlocked {
+                                    let dbOb = ["Date": formattedDate ,
+                                                "Status": "Faild",
+                                                "Platform" :  "Ios" ,
+                                                "UserId": ""
+                                        
+                                        ] as [String : Any]
+                                    Database.database().reference().child("LoginLog").childByAutoId().setValue(dbOb)
+                                    let alert = UIAlertController(title: "Error", message: "Your account Appears to be Blocked please contact admin for more assistance.", preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                    self!.present(alert, animated: true)
                                     
-                                    let s = UIStoryboard(name: "Doctor", bundle: nil)
-                                    let vc = s.instantiateViewController(withIdentifier: "doctorTabBar")
-                                    self!.navigationController?.pushViewController(vc, animated: true)
-                                } else if type == "Volunteer"{
+                                }else{
+                                    let dbOb = ["Date": formattedDate ,
+                                                "Status": "Success",
+                                                "Platform" :  "Ios" ,
+                                                "UserId": uid
+                                        
+                                        ] as [String : Any]
+                                    Database.database().reference().child("LoginLog").childByAutoId().setValue(dbOb)
                                     
-                                    let s = UIStoryboard(name: "Volunteer", bundle: nil)
-                                    let vc = s.instantiateViewController(withIdentifier: "vounteerHome")
-                                    self!.navigationController?.pushViewController(vc, animated: true)
-                                    
-                                }else if type == "Seeker"{
-                                    
-                                    let s = UIStoryboard(name: "Seeker", bundle: nil)
-                                    let vc = s.instantiateViewController(withIdentifier: "SeekerTab")
-                                    self!.navigationController?.pushViewController(vc, animated: true)
+                                    if let  type = value?.value(forKey: "Role") as? String{
+                                        if type == "Admin"{
+                                            let s = UIStoryboard(name: "Admin", bundle: nil)
+                                            let vc = s.instantiateViewController(withIdentifier: "adminDashboard")
+                                            self!.navigationController?.pushViewController(vc, animated: true)
+                                            
+                                            
+                                            
+                                        }else if type == "Doctor"{
+                                            
+                                            let s = UIStoryboard(name: "Doctor", bundle: nil)
+                                            let vc = s.instantiateViewController(withIdentifier: "doctorTabBar")
+                                            self!.navigationController?.pushViewController(vc, animated: true)
+                                        } else if type == "Volunteer"{
+                                            
+                                            let s = UIStoryboard(name: "Volunteer", bundle: nil)
+                                            let vc = s.instantiateViewController(withIdentifier: "vounteerHome")
+                                            self!.navigationController?.pushViewController(vc, animated: true)
+                                            
+                                        }else if type == "Seeker"{
+                                            
+                                            let s = UIStoryboard(name: "Seeker", bundle: nil)
+                                            let vc = s.instantiateViewController(withIdentifier: "SeekerTab")
+                                            self!.navigationController?.pushViewController(vc, animated: true)
+                                        }
+                                        else{
+                                            print("Error")
+                                        }
+                                    }
                                 }
-                                else{
-                                    print("Error")
-                                }
+                            }else{
+                                let dbOb = ["Date": formattedDate ,
+                                            "Status": "Faild",
+                                            "Platform" :  "Ios" ,
+                                            "UserId": ""
+                                    
+                                    ] as [String : Any]
+                                Database.database().reference().child("LoginLog").childByAutoId().setValue(dbOb)
+                                let alert = UIAlertController(title: "Error", message: "Please Check your email and password.", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                self!.present(alert, animated: true)
                             }
+                      
                             
                         }  )
                         
@@ -108,7 +137,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                                 "UserId": ""
                         
                         ] as [String : Any]
-                    Database.database().reference().childByAutoId().setValue(dbOb)
+                    Database.database().reference().child("LoginLog").childByAutoId().setValue(dbOb)
                     let alert = UIAlertController(title: "Error", message: "Please Check your email and password.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self!.present(alert, animated: true)

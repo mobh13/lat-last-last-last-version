@@ -33,13 +33,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GIO-Tn-f5f">
-                                <rect key="frame" x="135" y="209.5" width="215" height="30"/>
+                                <rect key="frame" x="109" y="210" width="241" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-Si-B2Y">
-                                <rect key="frame" x="135" y="255.5" width="215" height="30"/>
+                                <rect key="frame" x="109" y="256" width="241" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
@@ -82,10 +82,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GIO-Tn-f5f" secondAttribute="trailing" constant="25" id="KtH-sE-BKh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C3Q-Si-B2Y" secondAttribute="trailing" constant="25" id="MWh-r1-Q6N"/>
                             <constraint firstItem="5gw-3e-GgZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="119" id="MfU-2u-YrN"/>
-                            <constraint firstItem="C3Q-Si-B2Y" firstAttribute="leading" secondItem="sNE-xz-LEu" secondAttribute="trailing" constant="25" id="NeJ-2N-BUl"/>
+                            <constraint firstItem="C3Q-Si-B2Y" firstAttribute="leading" secondItem="sNE-xz-LEu" secondAttribute="trailing" constant="-1" id="NeJ-2N-BUl"/>
                             <constraint firstItem="5gw-3e-GgZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O9T-1s-1o0"/>
                             <constraint firstItem="C3Q-Si-B2Y" firstAttribute="top" secondItem="GIO-Tn-f5f" secondAttribute="bottom" constant="16" id="TTv-vt-hYV"/>
-                            <constraint firstItem="GIO-Tn-f5f" firstAttribute="leading" secondItem="LtK-3g-UdU" secondAttribute="trailing" constant="25" id="ZZR-Ah-SLN"/>
+                            <constraint firstItem="GIO-Tn-f5f" firstAttribute="leading" secondItem="LtK-3g-UdU" secondAttribute="trailing" constant="-1" id="ZZR-Ah-SLN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eqU-zU-Agt" secondAttribute="trailing" constant="100" id="aWa-9n-Sm4"/>
                             <constraint firstItem="eqU-zU-Agt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="hZc-7S-kuB"/>
                             <constraint firstItem="eqU-zU-Agt" firstAttribute="top" secondItem="bUF-pT-k1W" secondAttribute="bottom" constant="55" id="q7H-5b-v5Z"/>
