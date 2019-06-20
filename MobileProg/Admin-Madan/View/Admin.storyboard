@@ -18,35 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="KB4-Um-kj8">
-                            <rect key="frame" x="0.0" y="160" width="414" height="0.0"/>
+                            <rect key="frame" x="0.0" y="116" width="414" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <sections>
                             <tableViewSection headerTitle="Utilities" id="v2j-kX-o16">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="cW5-Wl-C9m">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cW5-Wl-C9m" id="nAQ-oS-9oL">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kd-EW-SpK">
-                                                    <rect key="frame" x="31" y="11.5" width="141" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="3kd-EW-SpK" firstAttribute="leading" secondItem="nAQ-oS-9oL" secondAttribute="leadingMargin" constant="11" id="SCi-tv-Lvs"/>
-                                                <constraint firstItem="3kd-EW-SpK" firstAttribute="centerY" secondItem="nAQ-oS-9oL" secondAttribute="centerY" id="xc3-RH-zPf"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="xq3-ay-u6L">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xq3-ay-u6L" id="XTj-d8-S7r">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
@@ -66,7 +46,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="AwN-Wu-MJq">
-                                        <rect key="frame" x="0.0" y="116" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AwN-Wu-MJq" id="IW9-qJ-sN3">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
@@ -2116,7 +2096,7 @@
         <!--Admin-->
         <scene sceneID="enC-Y3-3bc">
             <objects>
-                <tabBarController storyboardIdentifier="adminDashboard" title="Admin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r8z-RB-aYG" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="adminDashboard" title="Admin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r8z-RB-aYG" customClass="homeAdmin" customModule="MobileProg" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="L3W-hq-24c"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mt8-vt-d2I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

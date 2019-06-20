@@ -162,6 +162,7 @@
 		D0D163BA22BB097E0014712A /* SeekerViewDoctorProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D163A322BB097E0014712A /* SeekerViewDoctorProfileTableViewController.swift */; };
 		D0D163BC22BB09F40014712A /* StartSessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D163BB22BB09F30014712A /* StartSessionTableViewController.swift */; };
 		D0D163BE22BB0A490014712A /* SeekerAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D163BD22BB0A490014712A /* SeekerAppointment.swift */; };
+		D0D163C022BB968A0014712A /* homeAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D163BF22BB968A0014712A /* homeAdmin.swift */; };
 		DF06FBAE523BD516EF0E5EC1 /* Pods_MobileProg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C60247B8B664B60A3DA294 /* Pods_MobileProg.framework */; };
 		F015ACC32277108F003674BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015ACC22277108F003674BE /* AppDelegate.swift */; };
 		F015ACC52277108F003674BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015ACC42277108F003674BE /* ViewController.swift */; };
@@ -331,6 +332,7 @@
 		D0D163A322BB097E0014712A /* SeekerViewDoctorProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeekerViewDoctorProfileTableViewController.swift; path = MobileProg/Seeker/Controller/SeekerViewDoctorProfileTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D0D163BB22BB09F30014712A /* StartSessionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartSessionTableViewController.swift; path = MobileProg/Seeker/Controller/StartSessionTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D0D163BD22BB0A490014712A /* SeekerAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeekerAppointment.swift; path = MobileProg/Seeker/Model/SeekerAppointment.swift; sourceTree = SOURCE_ROOT; };
+		D0D163BF22BB968A0014712A /* homeAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeAdmin.swift; sourceTree = "<group>"; };
 		F015ACBF2277108F003674BE /* MobileProg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileProg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F015ACC22277108F003674BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F015ACC42277108F003674BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				D095708522B6BC0100C345C4 /* AddVolunteerTableViewController.swift */,
 				D095708722B6C3DA00C345C4 /* AddDoctorTableViewController.swift */,
 				D0D1628E22BA69510014712A /* SearchAllUsersTableViewController.swift */,
+				D0D163BF22BB968A0014712A /* homeAdmin.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 				D0D1628122B97BB70014712A /* VolunteerQuizQuestionAnswers.swift in Sources */,
 				D0D163A522BB097E0014712A /* AppointmentsListTableViewController.swift in Sources */,
 				D0D162D822BB06660014712A /* SeekerDashboardViewController.swift in Sources */,
+				D0D163C022BB968A0014712A /* homeAdmin.swift in Sources */,
 				D0D1637E22BB09640014712A /* SessionQuizAnswer.swift in Sources */,
 				D0D163AC22BB097E0014712A /* SeekerEditProfileController.swift in Sources */,
 				D0D163B722BB097E0014712A /* SearchTableViewCell.swift in Sources */,

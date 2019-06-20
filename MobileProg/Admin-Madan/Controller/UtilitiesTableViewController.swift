@@ -32,20 +32,18 @@ class UtilitiesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 2
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath.row {
+
+            
         case 0:
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "SendNotificationTableViewController") as! SendNotificationTableViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 1:
             let storyBoard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "EditAccountTableViewController") as! EditAccountTableViewController
             self.navigationController?.pushViewController(vc, animated: true)
-        case 2:
+        case 1:
             
            let alert =  UIAlertController(title: "Logout?", message: "Are you Sure that you want to logout ?", preferredStyle: .alert)
            alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: {(alert: UIAlertAction!) in self.singOut()}))

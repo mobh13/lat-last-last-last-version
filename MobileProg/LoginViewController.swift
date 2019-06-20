@@ -8,12 +8,14 @@
 
 import UIKit
 import Firebase
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,UITextFieldDelegate{
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtEmail.delegate = self
+        txtPassword.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -24,7 +26,13 @@ class LoginViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+
+  
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
     }
     
     @IBAction func loginClicked(_ sender: Any) {
@@ -51,13 +59,16 @@ class LoginViewController: UIViewController {
                                                          "UserId": uid
                                                       
                                 ] as [String : Any]
-                              Database.database().reference().childByAutoId().setValue(dbOb)
+                              Database.database().reference().child("LoginLog").childByAutoId().setValue(dbOb)
                             
                             if let  type = value?.value(forKey: "Role") as? String{
                                 if type == "Admin"{
                                     let s = UIStoryboard(name: "Admin", bundle: nil)
                                     let vc = s.instantiateViewController(withIdentifier: "adminDashboard")
                                     self!.navigationController?.pushViewController(vc, animated: true)
+                                  
+                            
+
                                 }else if type == "Doctor"{
                                     
                                     let s = UIStoryboard(name: "Doctor", bundle: nil)

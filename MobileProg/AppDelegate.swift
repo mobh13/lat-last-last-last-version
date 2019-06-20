@@ -22,17 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = application.windows[0].rootViewController as! UINavigationController
         FirebaseApp.configure()
         
-        do{
-            try Auth.auth().signOut()
-            let s = UIStoryboard(name: "Main", bundle: nil)
-            let vc = s.instantiateViewController(withIdentifier: "MainScreen")
-            
-            
-            navigationController.pushViewController(vc, animated: true)
-            
-        }catch{
-            print("error signing out !!")
-        }
         
 //                let s = UIStoryboard(name: "Admin", bundle: nil)
 //                let vc = s.instantiateViewController(withIdentifier: "adminDashboard")
