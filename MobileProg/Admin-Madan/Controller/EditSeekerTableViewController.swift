@@ -33,7 +33,9 @@ class EditSeekerTableViewController: UITableViewController ,UITextFieldDelegate,
     override func viewWillAppear(_ animated: Bool) {
         loadData()
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
+    }
     func loadData(){
         if self.id != nil {
             let db = Database.database().reference().child("User")

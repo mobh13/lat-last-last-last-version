@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class EditDoctorProfileTableViewController: UITableViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+class EditDoctorProfileTableViewController: UITableViewController , UIImagePickerControllerDelegate,UITextFieldDelegate , UINavigationControllerDelegate{
 
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var txtClincBuilding: UITextField!
@@ -36,7 +36,9 @@ class EditDoctorProfileTableViewController: UITableViewController , UIImagePicke
         alert.addAction(UIAlertAction(title: "Return", style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
+    }
     @IBAction func btnSave(_ sender: Any) {
         var valid = true
         var empty = false
@@ -122,6 +124,9 @@ class EditDoctorProfileTableViewController: UITableViewController , UIImagePicke
     override func viewDidLoad() {
         super.viewDidLoad()
  self.progressBar.isHidden = true
+        for inpu in txtInput {
+            inpu.delegate = self
+        }
         let db = Database.database().reference().child("User")
         let uid = self.id
     

@@ -56,6 +56,9 @@ class AddSeekerTableViewController: UITableViewController ,UITextFieldDelegate, 
         txtPassword.delegate = self
         txtPhone.delegate = self
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
+    }
 
     // MARK: - Table view data source
 

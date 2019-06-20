@@ -43,6 +43,9 @@ class AddDoctorTableViewController: UITableViewController,UITextFieldDelegate, U
         txtBuilding.delegate = self
             self.inputs = [txtName,txtUsername,txtEmail,txtPassword,txtCPR,txtNumber,txtClinicName,txtSpc,txtCity,txtBlock,txtStreet,txtBuilding]
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
+    }
     @IBAction func changeBtnPress(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self

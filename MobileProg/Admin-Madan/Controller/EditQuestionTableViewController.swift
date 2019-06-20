@@ -40,6 +40,9 @@ class EditQuestionTableViewController: UITableViewController,UITextFieldDelegate
         
         loadData()
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
+    }
     func loadData(){
         if self.id != nil {
             db.child("Questions").child(self.id!).observeSingleEvent(of: .value, with: {(snapshot) in

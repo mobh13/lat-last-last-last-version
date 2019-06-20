@@ -33,6 +33,9 @@ class AddVolunteerTableViewController: UITableViewController ,UITextFieldDelegat
         txtPhone.delegate = self
         txtCPR.delegate = self
 }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.endEditing(false)
+    }
 
     @IBAction func changePicture(_ sender: Any) {
         let imagePicker = UIImagePickerController()
